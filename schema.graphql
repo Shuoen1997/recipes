@@ -1,5 +1,5 @@
-extend schema
-  @link(url: "https://specs.apollo.dev/federation/v2.3", import: ["@key"])
+# extend schema
+#   @link(url: "https://specs.apollo.dev/federation/v2.3", import: ["@key"])
 
 type Query {
   "Returns a randomly selected recipe from our database"
@@ -21,7 +21,7 @@ type Recipe {
   "How much time it takes to cook the recipe, in minutes"
   cookingTime: Float
   "How much time it takes to prep the ingredients, in minutes"
-  prepTime: Float
+  prepTime: Float @deprecated(reason: "we don't trust this field anymore")
   "How much time it takes in total to prep and cook the recipe, in minutes"
   readyTime: Float
   "How many servings this recipe makes"
